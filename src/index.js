@@ -1,7 +1,8 @@
 import ReactDOM from 'react-dom';
 import './index.css';
+import Header from './header';
 
-function MainComponent(){
+function App(){
               return (<div className='main'>
                     <Header/>
                     <Facts/>
@@ -10,16 +11,6 @@ function MainComponent(){
               </div>
               )
 }
-
-const Header=()=>(
-    <nav>
-         <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="" className='nav-logo'/>
-         <ul className='nav-items'>
-           <li><a href="#">Pricing</a></li>
-           <li><a href="#">About</a></li>
-           <li><a href="#">Contact</a></li>
-         </ul>
-    </nav>)
 
 const Facts=()=> <h1>Fun facts about React</h1>
 
@@ -38,5 +29,5 @@ const Footer=()=>(
 )
 
 
-ReactDOM.render(<MainComponent/>,document.getElementById('root'));
+ReactDOM.render(<App/>,document.getElementById('root'));
 
