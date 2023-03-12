@@ -1,17 +1,42 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
+import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+function MainComponent(){
+              return (<div className='main'>
+                    <Header/>
+                    <Facts/>
+                    <List/>
+                    <Footer/>
+              </div>
+              )
+}
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+const Header=()=>(
+    <nav>
+         <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="" className='nav-logo'/>
+         <ul className='nav-items'>
+           <li><a href="#">Pricing</a></li>
+           <li><a href="#">About</a></li>
+           <li><a href="#">Contact</a></li>
+         </ul>
+    </nav>)
+
+const Facts=()=> <h1>Fun facts about React</h1>
+
+const List=()=> (
+              <ol>
+                  <li>Was released in 2013</li>
+                  <li>Was originally created by Jordan Walke</li>
+                  <li>Has well over 100k stars on Github</li>
+                  <li>Is maintained by Facebook</li>
+                  <li>Powers thousand of enterprise apps including mobile apps</li>
+              </ol>
+)
+
+const Footer=()=>(
+   <p className='footer'>2023 shimanto development. all rights reserved</p>
+)
+
+
+ReactDOM.render(<MainComponent/>,document.getElementById('root'));
+
